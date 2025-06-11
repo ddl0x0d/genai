@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration>
+
+<configuration>
+    <import class="ch.qos.logback.classic.encoder.PatternLayoutEncoder"/>
+    <import class="ch.qos.logback.core.ConsoleAppender"/>
+
+    <appender name="STDOUT" class="ConsoleAppender">
+        <encoder class="PatternLayoutEncoder">
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} -%kvp- %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="[Koin]" level="off"/>
+    <logger name="com.github.ddl0x0d" level="off"/>
+    <logger name="dev.langchain4j.http.client.log" level="info"/>
+    <logger name="org.apache.fontbox" level="off"/>
+    <logger name="org.apache.pdfbox" level="off"/>
+    <logger name="org.apache.tika" level="off"/>
+    <logger name="org.testcontainers" level="off"/>
+    <logger name="tc" level="off"/>
+
+    <root level="error">
+        <appender-ref ref="STDOUT"/>
+    </root>
+</configuration>

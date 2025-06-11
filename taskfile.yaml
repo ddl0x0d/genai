@@ -1,0 +1,22 @@
+version: 3
+
+tasks:
+  chroma:run:
+    aliases: [cr]
+    desc: Run Chroma server in Docker
+    cmd: docker compose run --rm chroma
+
+  chroma:sh:
+    aliases: [csh]
+    desc: Open Chroma Docker container shell
+    cmd: docker compose run --rm --entrypoint sh chroma
+
+  ollama:run:
+    aliases: [or]
+    desc: Run Ollama server in Docker
+    cmd: docker compose run --rm ollama
+
+  ollama:sh:
+    aliases: [osh]
+    desc: Open Ollama Docker container shell
+    cmd: docker compose run --rm --entrypoint sh ollama

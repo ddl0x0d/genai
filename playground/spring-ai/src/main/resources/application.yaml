@@ -1,0 +1,42 @@
+spring:
+  ai:
+    mcp:
+      client:
+        enabled: false
+        stdio:
+          servers-configuration: classpath:mcp-servers.json
+        toolcallback:
+          enabled: true
+    model:
+      chat: ollama
+      embedding: ollama
+    ollama:
+      chat:
+        model: llama3.2:1b
+#        model: llama3.2:3b
+#        model: gemma3:1b
+#        model: gemma3:4b
+#        model: qwen3:0.6b
+#        model: qwen3:1.7b
+        options:
+          temperature: 0.0
+  docker:
+    compose:
+      file: docker-compose.yaml
+  main:
+    banner-mode: off
+    log-startup-info: false
+  shell:
+    history:
+      enabled: false
+    interactive:
+      enabled: true
+
+logging:
+  level:
+    root: warn
+    com.github.ddl0x0d: debug
+    io.modelcontextprotocol: info
+    org.springframework.ai: debug
+    org.springframework.ai.chat.client.advisor: off
+    org.springframework.ai.chat.metadata.ChatResponseMetadata: off

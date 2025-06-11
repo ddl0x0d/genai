@@ -1,0 +1,35 @@
+# see also src/main/resources/default.yaml
+
+chat:
+  model: ollama
+
+model:
+  #gemini:
+  #  api-key: ${GEMINI_API_KEY}
+
+  ollama:
+    base-url: http://ollama:11434
+
+  #openai:
+  #  api-key: ${OPENAI_API_KEY}
+
+rag:
+  embedding:
+    model: bge_small_en
+  store:
+    type: in_memory
+
+    chroma:
+      host: chroma
+      port: 8000
+
+    pgvector:
+      host: pgvector
+      port: 5432
+      user: pgvector
+      password: secret
+      database: pgvector
+
+    qdrant:
+      host: qdrant
+      port: 6334

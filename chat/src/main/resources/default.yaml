@@ -1,0 +1,94 @@
+chat:
+  # Log model requests and responses
+  debug: false
+  # (Required) Model for AI Assistant chat, possible options:
+  # - gemini
+  # - ollama
+  # - openai
+  model: ollama
+  # Chat Memory settings
+  memory:
+    size: 32
+    # Possible options:
+    # - messages
+    # - tokens
+    type: messages
+  output:
+    # Print used tokens after each AI assistant response
+    tokens: false
+
+model:
+  gemini:
+    api-key: # ${GEMINI_API_KEY}
+    chat-model: gemini-2.5-flash
+    embedding-model: text-embedding-004
+
+  ollama:
+    # External Ollama instance Base URL,
+    # which take precedence over internal Ollama
+    base-url: # http://localhost:11434
+    # Internal Ollama Docker Image Tag
+    image-tag: 0.9.2 # https://hub.docker.com/r/ollama/ollama/tags
+    # Path to Ollama models for mounting into Docker container
+    mount-path: ~/.ollama
+    chat-model: llama3.2:1b                  # https://ollama.com/library/llama3.2
+    embedding-model: nomic-embed-text:latest # https://ollama.com/library/nomic-embed-text
+
+  # https://platform.openai.com/docs/pricing
+  openai:
+    base-url: https://api.openai.com/v1
+    api-key: # ${OPENAI_API_KEY}
+    chat-model: gpt-4.1-nano                # $0.10 / $0.40 per 1M tokens
+    embedding-model: text-embedding-3-small #         $0.02 per 1M tokens
+
+rag:
+  embedding:
+    # (Required) Model for RAG embeddings, possible options:
+    # - bge_small_en
+    # - gemini
+    # - ollama
+    # - openai
+    model: bge_small_en
+  ingestion:
+    chunk-size: 10
+    max-segment-size: 1024
+    log-duration: true
+  retrieval:
+    max-results: 3
+    min-score: 0.70
+  router:
+    enabled: false
+    model: ollama
+  store:
+    # (Required) Type of the embedding store, possible options:
+    # - in_memory
+    # - chroma
+    # - pgvector
+    # - qdrant
+    type: in_memory
+
+    chroma:
+      host: # localhost
+      port: -1 # 8000
+      # Internal Chroma Docker Image Tag
+      image-tag: 0.6.3 # https://hub.docker.com/r/chromadb/chroma/tags
+      # Chroma Collection name, see https://docs.trychroma.com/docs/collections
+      collection: default
+
+    pgvector:
+      host: # localhost
+      port: -1 # 5432
+      user: # pgvector
+      password: # secret
+      database: # pgvector
+      table: embeddings
+      create-table: true
+      image-tag: pg17
+
+    qdrant:
+      host: # localhost
+      port: -1 # 6334
+      # Internal Qdrant Docker Image Tag
+      image-tag: v1.14.1 # https://hub.docker.com/r/qdrant/qdrant/tags
+      # Qdrant Collection name
+      collection: default

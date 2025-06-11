@@ -1,0 +1,109 @@
+[versions]
+clikt                = "5.0.3"  # Feb 09, 2025 https://mvnrepository.com/artifact/com.github.ajalt.clikt/clikt
+hoplite              = "2.9.0"  # Nov 27, 2024 https://mvnrepository.com/artifact/com.sksamuel.hoplite/hoplite-core
+junit                = "5.13.1" # Jun 07, 2025 https://mvnrepository.com/artifact/org.junit/junit-bom
+kaml                 = "0.83.0" # Jun 28, 2025 https://mvnrepository.com/artifact/com.charleskorn.kaml/kaml
+koin                 = "4.1.0"  # Jun 09, 2025 https://mvnrepository.com/artifact/io.insert-koin/koin-bom
+koog                 = "0.2.1"  # Jun 06, 2025 https://mvnrepository.com/artifact/ai.koog/koog-agents
+kotest               = "5.9.1"  # Jun 06, 2024 https://mvnrepository.com/artifact/io.kotest/kotest-bom
+kotest-wiremock      = "3.1.0"  # May 31, 2024 https://mvnrepository.com/artifact/io.kotest.extensions/kotest-extensions-wiremock
+kotlin               = "2.2.0"  # Jun 23, 2025 https://mvnrepository.com/artifact/org.jetbrains.kotlin/kotlin-bom
+kotlin-logging       = "7.0.7"  # Apr 16, 2025 https://mvnrepository.com/artifact/io.github.oshai/kotlin-logging
+kotlin-serialization = "1.8.1"  # Apr 01, 2025 https://mvnrepository.com/artifact/org.jetbrains.kotlinx/kotlinx-serialization-bom
+langchain4j          = "1.1.0"  # Jun 18, 2025 https://mvnrepository.com/artifact/dev.langchain4j/langchain4j-bom
+log4j                = "2.25.0" # Jun 16, 2025 https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j
+logback              = "1.5.18" # Mar 18, 2025 https://mvnrepository.com/artifact/ch.qos.logback/logback-core
+spring-ai            = "1.0.0"  # May 19, 2025 https://mvnrepository.com/artifact/org.springframework.ai/spring-ai-bom
+spring-boot          = "3.5.3"  # Jun 20, 2025 https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-dependencies
+spring-shell         = "3.4.0"  # Dec 10, 2024 https://mvnrepository.com/artifact/org.springframework.shell/spring-shell-dependencies
+testcontainers       = "1.21.3" # Jun 28, 2025 https://mvnrepository.com/artifact/org.testcontainers/testcontainers-bom
+wiremock             = "3.13.1" # Jun 11, 2025 https://mvnrepository.com/artifact/org.wiremock/wiremock-standalone
+wiremock-kotlin      = "2.1.1"  # Nov 09, 2023 https://mvnrepository.com/artifact/com.marcinziolo/kotlin-wiremock
+
+[libraries]
+clikt                                   = { module = "com.github.ajalt.clikt:clikt", version.ref = "clikt" }
+hoplite-yaml                            = { module = "com.sksamuel.hoplite:hoplite-yaml", version.ref = "hoplite" }
+junit-jupiter                           = { module = "org.junit.jupiter:junit-jupiter", version.ref = "junit" }
+kaml                                    = { module = "com.charleskorn.kaml:kaml", version.ref = "kaml" }
+koin-bom                                = { module = "io.insert-koin:koin-bom", version.ref = "koin" }
+koin-core                               = { module = "io.insert-koin:koin-core" } # koin-bom
+koin-logger                             = { module = "io.insert-koin:koin-logger-slf4j" } # koin-bom
+koog-agents                             = { module = "ai.koog:koog-agents", version.ref = "koog" }
+kotest-api                              = { module = "io.kotest:kotest-framework-api" } # kotest-bom
+kotest-assertions                       = { module = "io.kotest:kotest-assertions-core" } # kotest-bom
+kotest-bom                              = { module = "io.kotest:kotest-bom", version.ref = "kotest" }
+kotest-data                             = { module = "io.kotest:kotest-framework-datatest" } # kotest-bom
+kotest-junit5                           = { module = "io.kotest:kotest-runner-junit5" } # kotest-bom
+kotest-wiremock                         = { module = "io.kotest.extensions:kotest-extensions-wiremock", version.ref = "kotest-wiremock" }
+kotlin-logging                          = { module = "io.github.oshai:kotlin-logging", version.ref = "kotlin-logging" }
+langchain4j-bom                         = { module = "dev.langchain4j:langchain4j-bom", version.ref = "langchain4j" }
+langchain4j-embeddings-all-minilm-l6-v2 = { module = "dev.langchain4j:langchain4j-embeddings-all-minilm-l6-v2" } # langchain-bom
+langchain4j-embeddings-bge-small-en     = { module = "dev.langchain4j:langchain4j-embeddings-bge-small-en" } # langchain-bom
+langchain4j-embeddings-bge-small-en-v15 = { module = "dev.langchain4j:langchain4j-embeddings-bge-small-en-v15" } # langchain-bom
+langchain4j-embeddings-e5-small-v2      = { module = "dev.langchain4j:langchain4j-embeddings-e5-small-v2" } # langchain-bom
+langchain4j-kotlin                      = { module = "dev.langchain4j:langchain4j-kotlin" } # langchain-bom
+langchain4j-main                        = { module = "dev.langchain4j:langchain4j" } # langchain-bom
+langchain4j-model-anthropic             = { module = "dev.langchain4j:langchain4j-anthropic" } # langchain-bom
+langchain4j-model-gemini                = { module = "dev.langchain4j:langchain4j-google-ai-gemini" } # langchain-bom
+langchain4j-model-ollama                = { module = "dev.langchain4j:langchain4j-ollama" } # langchain-bom
+langchain4j-model-openai                = { module = "dev.langchain4j:langchain4j-open-ai" } # langchain-bom
+langchain4j-parser-tika                 = { module = "dev.langchain4j:langchain4j-document-parser-apache-tika" } # langchain-bom
+langchain4j-store-chroma                = { module = "dev.langchain4j:langchain4j-chroma" } # langchain-bom
+langchain4j-store-pgvector              = { module = "dev.langchain4j:langchain4j-pgvector" } # langchain-bom
+langchain4j-store-qdrant                = { module = "dev.langchain4j:langchain4j-qdrant" } # langchain-bom
+langchain4j-test                        = { module = "dev.langchain4j:langchain4j-test" } # langchain-bom
+log4j-slf4j                             = { module = "org.apache.logging.log4j:log4j-to-slf4j", version.ref = "log4j" }
+logback-classic                         = { module = "ch.qos.logback:logback-classic", version.ref = "logback" }
+spring-ai-bom                           = { module = "org.springframework.ai:spring-ai-bom", version.ref = "spring-ai" }
+spring-ai-docker                        = { module = "org.springframework.ai:spring-ai-spring-boot-docker-compose" } # spring-ai-bom
+spring-ai-mcp-client-core               = { module = "org.springframework.ai:spring-ai-starter-mcp-client" } # spring-ai-bom
+spring-ai-mcp-client-webflux            = { module = "org.springframework.ai:spring-ai-starter-mcp-client-webflux" } # spring-ai-bom
+spring-ai-mcp-server-core               = { module = "org.springframework.ai:spring-ai-starter-mcp-server" } # spring-ai-bom
+spring-ai-mcp-server-webflux            = { module = "org.springframework.ai:spring-ai-starter-mcp-server-webflux" } # spring-ai-bom
+spring-ai-mcp-server-webmvc             = { module = "org.springframework.ai:spring-ai-starter-mcp-server-webmvc" } # spring-ai-bom
+spring-ai-memory-cassandra              = { module = "org.springframework.ai:spring-ai-starter-model-chat-memory-repository-cassandra" } # spring-ai-bom
+spring-ai-memory-core                   = { module = "org.springframework.ai:spring-ai-starter-model-chat-memory" } # spring-ai-bom
+spring-ai-memory-jdbc                   = { module = "org.springframework.ai:spring-ai-starter-model-chat-memory-repository-jdbc" } # spring-ai-bom
+spring-ai-memory-neo4j                  = { module = "org.springframework.ai:spring-ai-starter-model-chat-memory-repository-neo4j" } # spring-ai-bom
+spring-ai-model-anthropic               = { module = "org.springframework.ai:spring-ai-starter-model-anthropic" } # spring-ai-bom
+spring-ai-model-azure                   = { module = "org.springframework.ai:spring-ai-starter-model-azure-openai" } # spring-ai-bom
+spring-ai-model-bedrock                 = { module = "org.springframework.ai:spring-ai-starter-model-bedrock" } # spring-ai-bom
+spring-ai-model-ollama                  = { module = "org.springframework.ai:spring-ai-starter-model-ollama" } # spring-ai-bom
+spring-ai-model-openai                  = { module = "org.springframework.ai:spring-ai-starter-model-openai" } # spring-ai-bom
+spring-ai-reader-jsoup                  = { module = "org.springframework.ai:spring-ai-jsoup-document-reader" } # spring-ai-bom
+spring-ai-reader-markdown               = { module = "org.springframework.ai:spring-ai-markdown-document-reader" } # spring-ai-bom
+spring-ai-reader-pdf                    = { module = "org.springframework.ai:spring-ai-pdf-document-reader" } # spring-ai-bom
+spring-ai-reader-tika                   = { module = "org.springframework.ai:spring-ai-tika-document-reader" } # spring-ai-bom
+spring-ai-store-cassandra               = { module = "org.springframework.ai:spring-ai-starter-vector-store-cassandra" } # spring-ai-bom
+spring-ai-store-chroma                  = { module = "org.springframework.ai:spring-ai-starter-vector-store-chroma" } # spring-ai-bom
+spring-ai-store-milvus                  = { module = "org.springframework.ai:spring-ai-starter-vector-store-milvus" } # spring-ai-bom
+spring-ai-store-neo4j                   = { module = "org.springframework.ai:spring-ai-starter-vector-store-neo4j" } # spring-ai-bom
+spring-ai-store-pgvector                = { module = "org.springframework.ai:spring-ai-starter-vector-store-pgvector" } # spring-ai-bom
+spring-ai-store-qdrant                  = { module = "org.springframework.ai:spring-ai-starter-vector-store-qdrant" } # spring-ai-bom
+spring-ai-store-redis                   = { module = "org.springframework.ai:spring-ai-starter-vector-store-redis" } # spring-ai-bom
+spring-ai-store-weaviate                = { module = "org.springframework.ai:spring-ai-starter-vector-store-weaviate" } # spring-ai-bom
+spring-ai-test                          = { module = "org.springframework.ai:spring-ai-test" } # spring-ai-bom
+spring-ai-testcontainers                = { module = "org.springframework.ai:spring-ai-spring-boot-testcontainers" } # spring-ai-bom
+spring-shell-bom                        = { module = "org.springframework.shell:spring-shell-dependencies", version.ref = "spring-shell" }
+spring-shell-jansi                      = { module = "org.springframework.shell:spring-shell-starter-jansi" } # spring-shell-bom
+spring-shell-jna                        = { module = "org.springframework.shell:spring-shell-starter-jna" } # spring-shell-bom
+spring-shell-jni                        = { module = "org.springframework.shell:spring-shell-starter-jni" } # spring-shell-bom
+testcontainers-bom                      = { module = "org.testcontainers:testcontainers-bom", version.ref = "testcontainers" }
+testcontainers-chroma                   = { module = "org.testcontainers:chromadb" } # testcontainers-bom
+testcontainers-clickhouse               = { module = "org.testcontainers:clickhouse" } # testcontainers-bom
+testcontainers-ollama                   = { module = "org.testcontainers:ollama" } # testcontainers-bom
+testcontainers-postgres                 = { module = "org.testcontainers:postgresql" } # testcontainers-bom
+testcontainers-qdrant                   = { module = "org.testcontainers:qdrant" } # testcontainers-bom
+wiremock-kotlin                         = { module = "com.marcinziolo:kotlin-wiremock", version.ref = "wiremock-kotlin" }
+wiremock-standalone                     = { module = "org.wiremock:wiremock-standalone", version.ref = "wiremock" }
+
+[plugins]
+detekt        = { id = "io.gitlab.arturbosch.detekt", version = "1.23.8" }  # 21 Feb 2025 https://plugins.gradle.org/plugin/io.gitlab.arturbosch.detekt
+kotlin-jvm    = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+kotlin-serial = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+kotlin-spring = { id = "org.jetbrains.kotlin.plugin.spring", version.ref = "kotlin" }
+kover         = { id = "org.jetbrains.kotlinx.kover", version = "0.9.1" }    # 08 Jan 2025 https://plugins.gradle.org/plugin/org.jetbrains.kotlinx.kover
+shadow        = { id = "com.gradleup.shadow", version = "8.3.8" }            # 01 Jul 2025 https://plugins.gradle.org/plugin/com.gradleup.shadow
+spring-boot   = { id = "org.springframework.boot", version.ref = "spring-boot" }
+taskinfo      = { id = "org.barfuin.gradle.taskinfo", version = "2.2.0" }    # 29 Jan 2024 https://plugins.gradle.org/plugin/org.barfuin.gradle.taskinfo
+versions      = { id = "com.github.ben-manes.versions", version = "0.52.0" } # 23 Jan 2025 https://plugins.gradle.org/plugin/com.github.ben-manes.versions
